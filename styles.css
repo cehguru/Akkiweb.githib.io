@@ -1,24 +1,95 @@
+/* Reset & base styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  text-align: center;
+  overflow: hidden;
+  color: #fff;
 }
 
+/* Background floating shapes */
+.background span {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: float 10s infinite ease-in-out;
+}
+
+.background span:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-duration: 12s;
+}
+
+.background span:nth-child(2) {
+  top: 70%;
+  left: 10%;
+  animation-duration: 15s;
+}
+
+.background span:nth-child(3) {
+  top: 50%;
+  left: 80%;
+  animation-duration: 18s;
+}
+
+.background span:nth-child(4) {
+  top: 10%;
+  left: 60%;
+  animation-duration: 20s;
+}
+
+.background span:nth-child(5) {
+  top: 80%;
+  left: 70%;
+  animation-duration: 25s;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-30px) scale(1.2); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Content styling */
 .container {
+  position: relative;
+  text-align: center;
+  z-index: 2;
   padding: 20px;
 }
 
 h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
 p {
   font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff6f61;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  background: #ff3b2e;
+  transform: translateY(-3px);
 }
